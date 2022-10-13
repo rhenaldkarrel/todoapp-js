@@ -1,16 +1,10 @@
-import {
-  todos,
-  STORAGE_KEY,
-  SAVED_EVENT,
-  RENDER_EVENT
-} from "./constant.js";
+import { todos, STORAGE_KEY, SAVED_EVENT, RENDER_EVENT } from './constant.js';
 
 import {
-  addTaskToCompleted,
-  removeTaskFromCompleted,
-  undoTaskFromCompleted,
-} from "./events.js";
-
+	addTaskToCompleted,
+	removeTaskFromCompleted,
+	undoTaskFromCompleted,
+} from './events.js';
 
 export function generateId() {
 	return +new Date();
@@ -21,7 +15,7 @@ export function generateTodoObject(id, task, timestamp, clock, isCompleted) {
 		id,
 		task,
 		timestamp,
-    clock,
+		clock,
 		isCompleted,
 	};
 }
@@ -103,20 +97,20 @@ export function makeTodo(todoObject) {
 }
 
 export function findTodo(todoId) {
-  for (const todoItem of todos) {
-    if (todoItem.id === todoId) {
-      return todoItem;
-    }
-  }
-  return null;
+	for (const todoItem of todos) {
+		if (todoItem.id === todoId) {
+			return todoItem;
+		}
+	}
+	return null;
 }
 
 export function findTodoIndex(todoId) {
-  for (const index in todos) {
-    if (todos[index].id === todoId) {
-      return index;
-    }
-  }
+	for (const index in todos) {
+		if (todos[index].id === todoId) {
+			return index;
+		}
+	}
 
-  return -1;
+	return -1;
 }
